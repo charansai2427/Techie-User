@@ -35,8 +35,8 @@ export default function Home() {
               <div className="card-container bg-white">
                 <div className="card-container-01">
                   <div>
-                    <h5>{e.title}</h5>
-                    <h5 className="text-secondary ">{e.company_name}</h5>
+                    <h5 >{e.title}</h5>
+                    <h5 className="text-secondary " >{e.company_name}</h5>
                     <div>
                       <label className="h6">Role :</label>
                       <span>{e.role}</span>
@@ -130,7 +130,7 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="card-profile">
-                    <p>{e.company_name.slice(0, 2).toUpperCase()}</p>
+                    <p style={{ backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16) ,color:'white'}}>{e.company_name.slice(0, 2).toUpperCase()}</p>
                   </div>
                  <Link to={"/viewJOb/" + e._id}> <div className="viewjob">View Job <BsArrowRight/></div></Link>
               </div>

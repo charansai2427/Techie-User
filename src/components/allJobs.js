@@ -118,7 +118,7 @@ function AllJobs() {
                                         </div>
                                     </div>
                                     <div className="card-profile">
-                                        <p>{e.company_name.slice(0, 2).toUpperCase()}</p>
+                                        <p style={{ backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16) ,color:'white'}}>{e.company_name.slice(0, 2).toUpperCase()}</p>
                                     </div>
                                     <Link to={"/viewJOb/" + e._id}> <div className="viewjob">View Job <BsArrowRight /></div></Link>
                                 </div>

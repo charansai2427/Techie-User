@@ -28,7 +28,7 @@ function Ifollow() {
         </div>
         <div className="h2 pt-4 pb-2">Companies Followed</div>
 
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)" }} className="gap-3 ">
+        <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)" }} className="gap-3 ">
           {
             followedCompanies && followedCompanies.map((e) => {
               return (
