@@ -97,7 +97,7 @@ function Header() {
             iFollow 
           </div>
           <div onClick={handleClick} className="profile-name">
-            <p>{email && email.slice(0, 2).toUpperCase()}</p>
+            <p >{email && email.slice(0, 2).toUpperCase()}</p>
           </div>
         </div>
         
@@ -108,7 +108,7 @@ function Header() {
           <ul>
             <li onClick={() => navigate("/profile=/:userId")}>My Profile</li>
             <li>
-               <Link to={"/savedJobs/" + userId} style={{color:'black',textDecoration:'solid'}}>Saved Jobs</Link>
+               <Link to={"/savedJobs/" + userId} style={{color:'black',textDecoration:'solid',}}>Saved Jobs</Link>
             </li>
             <li>Applied Jobs</li>
             <li

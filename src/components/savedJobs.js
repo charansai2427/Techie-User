@@ -119,7 +119,7 @@ function SavedJobs() {
                     </div>
                   </div>
                   <div className="card-profile">
-                    <p>{e.value.company_name.slice(0, 2).toUpperCase()}</p>
+                    <p style={{backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16),color:'white'}}>{e.value.company_name.slice(0, 2).toUpperCase()}</p>
                   </div>
                   <Link to={"/viewJOb/" + e.value._id}>
                     {" "}

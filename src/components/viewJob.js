@@ -194,7 +194,7 @@ const userId = localStorage.getItem("userId")
         <h3  className="pt-2"style={{marginLeft:'1.7em'}}>About Company</h3>
         <hr style={{width:'65em',marginLeft:'2.5em'}}/>
         <div className="card-profile shadow border bg-light pt-2 rounded pill" style={{width:'65em',height:'20vh',marginLeft:'2.5em'}}>
-          <p style={{marginLeft:'1.3em'}}>
+          <p style={{marginLeft:'1.3em',backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16),color:'white'}}>
             {getJobDetails.company_name &&
               getJobDetails.company_name.slice(0, 2).toUpperCase()}
           </p>
