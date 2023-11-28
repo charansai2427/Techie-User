@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
-import { getAllJobs } from '../redux/slices/dataSlice';
+import { getAllJobs,getSearchJobs } from '../redux/slices/dataSlice';
 import { BiSearch } from "react-icons/bi";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import {FaArrowRightLong} from "react-icons/fa6"
 import { Progress } from 'reactstrap';
 import "../styles/header.css"
+import Home from './home';
 import AllJobs from './allJobs';
+import SearchJob from './searchJob';
 function Header() {
     const token = localStorage.getItem("token");
     const email = localStorage.getItem("email");
     const userId = localStorage.getItem("userId");
+  const[on,setOn]=useState(false);
+
+    const searchJobs = useSelector((state)=> state.User.value.searchJobs);
+
     const [open, setOpen] = useState(false);
+    const [search,setSearch] = useState({});
+
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const handleClick = () => {
@@ -20,6 +28,11 @@ function Header() {
       const handleClick2 =() =>{
         navigate('/Alljobs')
       }
+
+      const searchClick = () =>{
+        dispatch(getSearchJobs({searchedInput:search}))
+      }
+
       useEffect(() => {
         dispatch(getAllJobs());
         if (!token) {
@@ -27,6 +40,7 @@ function Header() {
           window.location.reload();
         }
       }, [token]);
+
   return (
  
         <div className="home-container ">
@@ -39,8 +53,8 @@ function Header() {
             />
           </div>
           <div>
-          <input type="search" placeholder="Search by Keyboard / desigination / role / company" style={{ position: 'relative', top: '0.1em', left: '2em', borderRadius: '50px', width: '27em', height: '3em', border: 'solid rgb(232,235,238)' }} />
-          <BiSearch style={{ position: "absolute", top: '1.3em', left: "26em", fontSize: '1.5em', color: 'gray' }} />
+          <input type="search" placeholder="Search by Keyboard / desigination / role / company" style={{ position: 'relative', top: '0.1em', left: '2em', borderRadius: '50px', width: '27em', height: '3em', border: 'solid rgb(232,235,238)' }}  onChange={(e)=>setSearch(e.target.value)}/>
+          <BiSearch style={{ position: "absolute", top: '1.3em', left: "26em", fontSize: '1.5em', color: 'gray' }} onClick={searchClick}/>
         </div>
 
           <div style={{ cursor: "pointer" }}className="drop" >
@@ -104,8 +118,8 @@ function Header() {
 
         <div
           className={` profile-dropdown ${open ? "display" : "display-none"}`}style={{zIndex:'1'}}
-        >
-          <ul>
+          >
+          <ul style={{border:'1px solid',borderRadius:'10px',marginTop:'1.5em',boxShadow:''}}>
             <li onClick={() => navigate("/profile=/:userId")}>My Profile</li>
             <li>
                <Link to={"/savedJobs/" + userId} style={{color:'black',textDecoration:'solid',}}>Saved Jobs</Link>
@@ -121,6 +135,9 @@ function Header() {
             </li>
           </ul>
         </div>
+     {  
+      on ?<Home/>:<SearchJob/>
+      }
       </div>
    
   )

@@ -14,6 +14,8 @@ import Ifollow from "./components/ifollow";
 import ViewCompany from "./components/viewCompany";
 import SavedJobs from "./components/savedJobs";
 import AllJobs from "./components/allJobs";
+import SearchJob from "./components/searchJob";
+
 function App() {
   const router = createBrowserRouter([
     {
@@ -64,6 +66,10 @@ function App() {
     {
       path : "/Alljobs",
       element: <AllJobs/>
+    },
+    {
+      path:'searchJob',
+      element:<SearchJob/>
     }
   ]);
   return (

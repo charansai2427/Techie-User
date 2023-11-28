@@ -8,6 +8,7 @@ import { BsBookmark,BsArrowRight } from "react-icons/bs";
 const ViewCompany = () => {
   const company = useSelector((state) => state.User.value.company);
   const companyJobs = useSelector((state) => state.User.value.companyJobs);
+  console.log(companyJobs);
   const dispatch = useDispatch();
   const params = useMatches();
  
@@ -34,7 +35,7 @@ const ViewCompany = () => {
 
         <h3>About Company</h3>
         <div className="card-profile">
-          <p>
+          <p style={{ backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16) ,color:'white'}}>
             {company.company_name &&
               company.company_name.slice(0, 2).toUpperCase()}
           </p>
@@ -62,7 +63,7 @@ const ViewCompany = () => {
             onClick={() =>
               dispatch(getCompanyJobs({ cid: params[0].params.cid }))
             }
-            style={{ fontSize: "1.1rem", fontWeight: "600", cursor: "pointer" }}
+            style={{ fontSize: "1.1rem", fontWeight: "600", cursor: "pointer" ,gridTemplateColumns:'(2,1fr)'}}
           >
             Jobs
           </div>
@@ -70,37 +71,38 @@ const ViewCompany = () => {
       </div>
       <div className="homePage-container">
          <div className="homePage-cards-container container">
-            {companyJobs.length &&
-              companyJobs.map((e) => {
+            {companyJobs?.length &&
+              companyJobs?.map((e) => {
+                console.log(e?.value);
                 return (
                   <div className="card-container">
                     <div className="card-container-01">
                       <div>
-                        <h5>{e.value.title}</h5>
-                        <h5 className="text-secondary ">{e.value.company_name}</h5>
+                        <h5>{e?.value?.title}</h5>
+                        <h5 className="text-secondary ">{e?.value?.company_name}</h5>
                         <div>
                           <label className="h6">Role :</label>
-                          <span>{e.value.role}</span>
+                          <span>{e?.value?.role}</span>
                         </div>
                         <div>
                           <label className="h6">Functional Area : </label>
-                          <span>{e.value.functionalarea}</span>
+                          <span>{e?.value?.functionalarea}</span>
                         </div>
                         <div>
                           <label className="h6">States/Cities :</label>
-                          <span>{e.value.States}</span>
+                          <span>{e?.value?.States}</span>
                         </div>
                         <div>
                           <label className="h6">Employment Type :</label>
-                          <span>{e.value.employmenttype}</span>
+                          <span>{e?.value?.employmenttype}</span>
                         </div>
                       </div>
                     </div>
                     <div>
                       <label className="h6">Skills :</label>
                       <div className="d-flex" style={{ columnGap: "0.3rem" }}>
-                        {e.value.skills &&
-                          e.value.skills.split(",").map((i) => {
+                        {e?.value?.skills &&
+                          e?.value?.skills.split(",").map((i) => {
                             return (
                               <div>
                                 <span
@@ -137,7 +139,7 @@ const ViewCompany = () => {
                           }}
                           className="bg-secondary text-white rounded-pill"
                         >
-                          {e.value.experience}
+                          {e?.value?.experience}
                         </span>
                       </div>
                       <div>
@@ -147,12 +149,12 @@ const ViewCompany = () => {
                             padding: "0 0.2rem 0 0.2rem",
                           }}
                         >
-                          {e.value.salary && e.value.salary == "" ? (
+                          {e?.value?.salary && e?.value?.salary == "" ? (
                             <span className="bg-white"></span>
                           ) : (
                             <span className="bg-secondary text-white rounded-pill">
                               {" "}
-                              {e.value.salary}
+                              {e?.value?.salary}
                             </span>
                           )}
                         </span>
@@ -165,12 +167,12 @@ const ViewCompany = () => {
                           }}
                           className="bg-secondary text-white rounded-pill"
                         >
-                          {e.openings}
+                          {e?.value?.openings}
                         </span>
                       </div>
                     </div>
                     <div className="card-profile">
-                      <p>{ e.value.company_name && e.value.company_name.slice(0, 2).toUpperCase()}</p>
+                      <p style={{ backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16) ,color:'white'}}>{ e?.value?.company_name && e?.value?.company_name.slice(0, 2).toUpperCase()}</p>
                     </div>
                     <Link to={"/viewJOb/" + e._id}>
                       {" "}

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import { baseUrl, baseUrl1, baseUrl2 } from "../../utils/api";
+import { baseUrl, baseUrl1, baseUrl2 ,baseUrl3} from "../../utils/api";
 
 const dataSlice = createSlice({
   name: "users",
@@ -25,7 +25,8 @@ const dataSlice = createSlice({
       postSavedJob : {},
       getSavedJob: [],
       postFollowCompany : {},
-      getUserFollowedComp:[]
+      getUserFollowedComp:[],
+      getSearchJob:[]
     },
   },
 
@@ -177,6 +178,15 @@ const dataSlice = createSlice({
     builder.addCase(getUserFollowedComp.rejected, (state, action) => {
       state.error = action.error;
     });
+
+
+    builder.addCase(getSearchJobs.fulfilled, (state,action) =>{
+      state.value.getSearchJob= action.payload;
+    });
+    builder.addCase(getSearchJobs.rejected, (state,action) =>{
+      state.error= action.error;
+    });
+
   },
 });
 
@@ -287,7 +297,7 @@ export const getAllCompanies = createAsyncThunk("getAllCompanies", async() => {
 })
 
 export const getJob = createAsyncThunk("getCompany", async({jobId}) => {
-  const {data} = await axios.get(baseUrl + "/jobs/get/" + jobId)
+  const {data} = await axios.get(baseUrl2 + "/jobs/get/" + jobId)
   return data
 })
 
@@ -356,4 +366,8 @@ export const getUserFollowedComp = createAsyncThunk("UserFollowedCOmpanies", asy
   return data;
 })
 
+export const getSearchJobs = createAsyncThunk("getSearchJobs", async({searchedInput}) => {
+  const {data} = await axios.get(baseUrl3 + "/search/search?search="+searchedInput)
+  return data
+})
 export default dataSlice.reducer;
