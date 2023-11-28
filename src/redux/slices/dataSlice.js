@@ -297,7 +297,7 @@ export const getAllCompanies = createAsyncThunk("getAllCompanies", async() => {
 })
 
 export const getJob = createAsyncThunk("getCompany", async({jobId}) => {
-  const {data} = await axios.get(baseUrl2 + "/jobs/get/" + jobId)
+  const {data} = await axios.get(baseUrl + "/jobs/get/" + jobId)
   return data
 })
 
