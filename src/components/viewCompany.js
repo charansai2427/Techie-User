@@ -71,7 +71,7 @@ const ViewCompany = () => {
       </div>
       <div className="homePage-container">
          <div className="homePage-cards-container container">
-            {companyJobs?.length &&
+            {companyJobs &&
               companyJobs?.map((e) => {
                 console.log(e?.value);
                 return (

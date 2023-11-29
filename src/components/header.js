@@ -110,8 +110,8 @@ function Header() {
           <div  onClick={() => navigate("/ifollow")} style={{cursor: "pointer"}} className="border rounded-pill p-2 border-success text-success">
             iFollow 
           </div>
-          <div onClick={handleClick} className="profile-name">
-            <p >{email && email.slice(0, 2).toUpperCase()}</p>
+          <div onClick={handleClick} className="profile-name" style={{ backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16) ,color:'white'}}>
+            <p>{email && email.slice(0, 2).toUpperCase()}</p>
           </div>
         </div>
         

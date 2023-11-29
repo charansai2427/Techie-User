@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Header from "./header";
 import { useDispatch, useSelector } from "react-redux";
 import {
   getAllCompanies,
   getUserFollowedComp,
-} from "../redux/slices/dataSlice"; import { FaArrowRightLong } from "react-icons/fa6";
+} from "../redux/slices/dataSlice"; 
+import { FaArrowRightLong } from "react-icons/fa6";
 
 import { Link } from "react-router-dom";
 function Ifollow() {
   const dispatch = useDispatch();
   const companyData = useSelector((state) => state.User.value.companyData)
-  const getJobDetails = useSelector((state) => state.User.value.getJobDetails);
+  // const getJobDetails = useSelector((state) => state.User.value.getJobDetails);
   const followedCompanies = useSelector((state) => state.User.value.followedCompanies);
-  // const [colorCode,setColorCode] =useState({});
 
   useEffect(() => {
     dispatch(getAllCompanies());
@@ -56,7 +56,7 @@ function Ifollow() {
               return (
                 <div className="shadow border rounded " style={{ width: '23em' }}>
                   <div style={{ backgroundColor: 'rgb()' }} className="card-profile pt-3 p-1">
-                    <p style={{ backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16),color:'white' }}>{e.company_name.slice(0, 2).toUpperCase()}</p>
+                    <p style={{ backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16),color:'white'}}>{e?.company_name?.slice(0, 2).toUpperCase()}</p>
                   </div>
                   <div style={{ fontSize: '1.1em', marginLeft: '5em', marginTop: '-5.5em', height: '3.5em' }}><b>{e.company_name}</b></div>
                   <div style={{ marginLeft: '6em', marginTop: '-0.7em', color: 'gray' }}>{e.location}</div>                 
