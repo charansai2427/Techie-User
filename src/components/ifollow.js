@@ -6,9 +6,11 @@ import {
   getUserFollowedComp,
 } from "../redux/slices/dataSlice"; 
 import { FaArrowRightLong } from "react-icons/fa6";
+import { verifyToken } from "../utils/utlis";
+import { Link, useNavigate } from "react-router-dom";
 
-import { Link } from "react-router-dom";
 function Ifollow() {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const companyData = useSelector((state) => state.User.value.companyData)
   // const getJobDetails = useSelector((state) => state.User.value.getJobDetails);
@@ -18,6 +20,16 @@ function Ifollow() {
     dispatch(getAllCompanies());
     dispatch(getUserFollowedComp({ userId: localStorage.getItem("userId") }));
   }, []);
+
+  const userId = localStorage.getItem("userId")
+  const token = localStorage.getItem("token");
+  const email = localStorage.getItem("email");
+  useEffect(() => {
+    if (!verifyToken(email,userId,token)) {
+      navigate("/accounts/login");
+      window.location.reload();
+    }
+  }, [token]);
   return (
     <div>
       <Header />

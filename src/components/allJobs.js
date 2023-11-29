@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './header';
 import { useSelector } from "react-redux";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BsArrowRight } from "react-icons/bs";
 import { FaChevronDown } from "react-icons/fa6";
 import { getAllJobs } from "../redux/slices/dataSlice";
 import "../styles/allJobs.scss"
 import { Input} from 'reactstrap';
+import { verifyToken } from '../utils/utlis';
 function AllJobs() {
 
     const jobData = useSelector((state) => state.User.value.jobData);
+    const userId = localStorage.getItem("userId")
+    const token = localStorage.getItem("token");
+    const email = localStorage.getItem("email");
+    const navigate = useNavigate()
+    useEffect(() => {
+      if (!verifyToken(email,userId,token)) {
+        navigate("/accounts/login");
+        window.location.reload();
+      }
+    }, [token]);
     return (
         <div>
             <div className="allJobs-container" style={{ backgroundColor: 'rgb(243,243,243)' }}>

@@ -9,6 +9,7 @@ import { CiMail } from "react-icons/ci";
 import { FaTwitter } from "react-icons/fa";
 import Header from "./header";
 import { BsBookmark } from "react-icons/bs";
+import { verifyToken } from "../utils/utlis";
 import "../styles/viewJob.scss";
 function ViewJob() {
   const dispatch = useDispatch();
@@ -25,6 +26,16 @@ const userId = localStorage.getItem("userId")
   useEffect(() => {
     dispatch(getJob({ jobId: params[0].params.jobId }));
   }, []);
+
+
+  const token = localStorage.getItem("token");
+  const email = localStorage.getItem("email");
+  useEffect(() => {
+    if (!verifyToken(email,userId,token)) {
+      navigate("/accounts/login");
+      window.location.reload();
+    }
+  }, [token]);
   return (
     <div className="job-container " style={{backgroundColor:'rgb(243,243,243)'}}>
       <Header />

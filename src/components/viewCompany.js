@@ -1,15 +1,18 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { followCompany, getCompanyJobs, getOneCompany } from "../redux/slices/dataSlice";
-import { Link, useMatches, useParams } from "react-router-dom";
+import { Link, useMatches, useNavigate, useParams } from "react-router-dom";
 import Header from "./header";
 import "../styles/home.scss"
 import { BsBookmark,BsArrowRight } from "react-icons/bs";
+import { verifyToken } from "../utils/utlis";
+
 const ViewCompany = () => {
   const company = useSelector((state) => state.User.value.company);
   const companyJobs = useSelector((state) => state.User.value.companyJobs);
   console.log(companyJobs);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const params = useMatches();
  
   const params1 = useParams();
@@ -21,6 +24,15 @@ const ViewCompany = () => {
   useEffect(() => {
      dispatch(getOneCompany(params1));
   }, []);
+  const userId = localStorage.getItem("userId")
+  const token = localStorage.getItem("token");
+  const email = localStorage.getItem("email");
+  useEffect(() => {
+    if (!verifyToken(email,userId,token)) {
+      navigate("/accounts/login");
+      window.location.reload();
+    }
+  }, [token]);
   return (
     <div>
       <Header />

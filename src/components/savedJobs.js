@@ -1,18 +1,30 @@
 import React, { useEffect } from "react";
 import Header from "./header";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserSaveJobs } from "../redux/slices/dataSlice";
 import {BsArrowRight} from "react-icons/bs"
+import { verifyToken } from "../utils/utlis";
 function SavedJobs() {
   const params = useParams();
   console.log(params);
   const getSavedjob = useSelector((state) => state.User.value.getSavedJob);
   console.log(getSavedjob);
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUserSaveJobs(params));
   }, []);
+  const userId = localStorage.getItem("userId")
+  const token = localStorage.getItem("token");
+  const email = localStorage.getItem("email");
+  useEffect(() => {
+    if (!verifyToken(email,userId,token)) {
+      navigate("/accounts/login");
+      window.location.reload();
+    }
+  }, [token]);
   return (
     <div className="homePage-container">
       <Header />
