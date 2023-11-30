@@ -218,7 +218,7 @@ const userId = localStorage.getItem("userId")
             }
           </div>
           <div className="pt-5">
-            <span style={{marginLeft:'36em',cursor:"pointer"}}>View Company <FaArrowRightLong /></span>
+            <span style={{marginLeft:'29em',cursor:"pointer"}}>View Company <FaArrowRightLong /></span>
           </div>
         </div>
       </div>
