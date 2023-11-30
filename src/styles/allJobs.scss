@@ -1,4 +1,6 @@
 .allJobs-container{
+ background-color: rgb(243,243,243);
+
     .homePage-cards-container{
       padding-top: 1rem;
       display: grid;
@@ -76,4 +78,46 @@ hr{
   width:9.8em;
   margin-left:1.8em
 }
+}
+
+
+.footer{
+  background-color: rgb(244,179,74);
+  width:100%;
+  height:25vh;
+  margin-top: 0em;
+  .inside{
+      .privacy{
+          color:white;
+          margin-left: 9em;
+      }
+      .copy{
+          color:rgb(187, 166, 133);
+          margin-left: 9em;
+      }
+  }
+  .icons{
+      position: absolute;
+      top:52.5em;
+      right:2em;
+      font-size: 2em;
+      display: flex;
+      color: white;
+      justify-content: space-evenly;
+      margin-right: 3em;
+      column-gap: 1em;
+  }
+}
+.links{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .play{
+      width:10em;
+      position: absolute;
+      right:12em;
+      top:2em;
+      // margin-top: 2em;
+  }
+ 
 }
