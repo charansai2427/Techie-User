@@ -80,12 +80,12 @@ const ViewCompany = () => {
               company.company_name.slice(0, 2).toUpperCase()}
           </p>
           <div><b>{company && company.company_name}</b></div>
-          <div style={{marginTop:'1.5em',color:'gray',marginLeft:'-19em'}}>{
+          <div style={{color:'gray',position:'absolute',top:'16.3em',left:'10.5em'}}>{
             company && company.location
           }
           </div>
           <br/>
-          <b style={{marginTop:'3.5em',marginLeft:'-7.5em'}}>About Company</b>
+          <b style={{position:'absolute',top:'18em',left:'10.5em'}}>About Company</b>
         </div>
         <div
           style={{ backgroundColor: "rgb(244,179,74)",marginTop:'2em' }}

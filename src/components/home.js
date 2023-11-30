@@ -4,6 +4,10 @@ import {BsArrowRight} from "react-icons/bs";
 import { Link, useNavigate } from "react-router-dom";
 import { GoSearch } from "react-icons/go";
 import { useDispatch, useSelector } from "react-redux";
+import { AiFillLinkedin } from "react-icons/ai";
+import { CiMail } from "react-icons/ci";
+import { FaTwitter } from "react-icons/fa";
+import {BsInstagram} from "react-icons/bs"
 import { getAllJobs } from "../redux/slices/dataSlice";
 import Header from "./header";
 
@@ -137,6 +141,22 @@ export default function Home() {
             );
           })}
       </div>
+      <div className="foter">
+                <div className="inside">
+                    <img src="https://res.cloudinary.com/cliqtick/image/upload/v1692600339/icons/logo-techie-_IE_uqk1bc.png" style={{ width: '7em', height: '3em', marginTop: '1em', marginLeft: '10em' }} />
+                    <p className="privacy">Privacy Policy . Terms & Conditions . Beware of Fraudsters</p>
+                    <p className="copy">Copyright © 2023 codezo.in | All Rights Reserved</p>
+                    <div className="icons">
+                        <FaTwitter />
+                        <BsInstagram />
+                        <AiFillLinkedin />
+                        <CiMail />
+                    </div>
+                </div>
+            <div className="links">
+                <img className="playstore" src="https://codezo.s3.amazonaws.com/static/img/google-play-download.png" />
+            </div>
+            </div>
     </div>
   );
 }
