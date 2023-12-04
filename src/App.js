@@ -26,10 +26,10 @@ function App() {
       path: "/home",
       element: <Home />,
     },
-    {
-      path: "/profile=/:userId",
-      element: <BuildProfile />,
-    },
+    // {
+    //   path: "/profile=/:userId",
+    //   element: <BuildProfile />,
+    // },
     {
       path: "/profile/edit/:userId",
       element: <ProfileForm />,

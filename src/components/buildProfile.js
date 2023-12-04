@@ -23,8 +23,8 @@ const BuildProfile = () => {
     <div className="buldmyprofile-container  ">
     <Header/>
      
-      <div className="container profile-container">
-        <div className="h1">Profile</div>
+      <div className="container profile-container bg-white">
+        {/* <div className="h1">Profile</div> */}
         <div className="profile-pic-container">
            <div className="profile-pic">
             {
@@ -41,7 +41,7 @@ const BuildProfile = () => {
                 <label>User Name :</label>
               </div>
               <div>
-                <input
+                <input style={{color:'currentcolor',font:'inherit',letterSpacing:'inherit',boxSizing:'content-box',WebkitTapHighlightColor: 'transparent'}}
                   type="text"
                   placeholder={`${userDetails.username}`}
                   readOnly
@@ -79,7 +79,7 @@ const BuildProfile = () => {
             <div className="no1">
             
               <div>
-                <label>Phone Number</label>
+                <label>Phone Number :</label>
               </div>
               <div>
                 <input

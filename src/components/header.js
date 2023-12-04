@@ -45,7 +45,7 @@ function Header() {
  
         <div className="home-container ">
         <div className="line"></div>
-        <div className="home-container-header shadow bg-light">
+        <div className="home-container-header">
           <div>
             <img
               className="logo"
@@ -91,7 +91,7 @@ function Header() {
        
           <div>
           <Link
-            to={"/profile=/" + userId}
+            to={"/profile/edit/" + userId}
             style={{
               cursor: "pointer",
               textDecoration: "none",

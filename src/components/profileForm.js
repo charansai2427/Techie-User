@@ -38,15 +38,21 @@ const BuildProfile = () => {
   return (
     <div className="buldmyprofile-container">
        <Header/>
-      <div className="container profile-container">
-        <h2>Profile</h2>
-        <div className="profile-pic-container">
+      <div className="container profile-container bg-white">
+        {/* <h2>Profile</h2> */}
+        {/* <div className="profile-pic-container">
            <div className="profile-pic">
            {
               userDetails? <img className="profile-image" src={userDetails.profile_pic} alt="Img"/> :  <p className="h1" >{email && email.slice(0,2).toUpperCase()}</p>
             }
             <MdModeEditOutline onClick={() => navigate("/profile/edit-pic")} className="edit-icon"/> 
            </div>
+        </div> */}
+
+        <div className="upper" style={{display:'flex',flexDirection:'row',justifyContent:'center',alignItems:'center',columnGap:'2em', paddingTop:'2em'}}>
+        <div  style={{backgroundColor:'rgb(244,179,74)',borderRadius:'50px',height:'1em',width:'1em'}}></div>
+        <div style={{width:'30em',height:'0.1em',color:'rgb(244,179,74)',backgroundColor:'rgb(244,179,74)'}}></div>
+        <div style={{backgroundColor:'black',borderRadius:'50px',height:'1em',width:'1em'}}></div>
         </div>
         <div className="profile-div">
           <div className="profile-details">
@@ -55,9 +61,9 @@ const BuildProfile = () => {
                 <label>User Name :</label>
               </div>
               <div>
-                <input
+                <input 
                   type="text"
-                  placeholder={`${userDetails.username}`}
+                  placeholder={`${userDetails.username}`}   
                   onChange={(e) => setFormData({...formData,username : e.target.value})}
                 />
               </div>
@@ -94,7 +100,7 @@ const BuildProfile = () => {
             <div className="no1">
             
               <div>
-                <label>Phone Number</label>
+                <label>Phone Number :</label>
               </div>
               <div>
                 <input

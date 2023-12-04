@@ -1,18 +1,18 @@
 .profile-div{
-    background-color:   rgb(250,225,184);
+    // background-color:   rgb(250,225,184);
     padding: 2rem ;
     .profile-details{
-       
+      
         display: grid;
         gap: 1rem;
-        column-gap: 18rem;
+        column-gap: 14em;
         grid-template-columns: repeat(2, 1fr);
-       
         border-radius: 1%;
       .no1{
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin:2px;
        input{
         width: 18rem;
         height: 2.5rem;
