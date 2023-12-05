@@ -13,7 +13,7 @@ const Front = () => {
 
     const onHandleClick = (e) => {
         e.preventDefault();
-        navigate("accounts/login")
+        navigate("/login")
     };
 
     const onHandleClick1 = (e) => {
@@ -65,7 +65,7 @@ const Front = () => {
                 </div>
             </div>
 
-            <div className="footer">
+            <div className="foer">
                 <div className="inside">
                     <img src="https://res.cloudinary.com/cliqtick/image/upload/v1692600339/icons/logo-techie-_IE_uqk1bc.png" style={{ width: '7em', height: '3em', marginTop: '1em', marginLeft: '10em' }} />
                     <p className="privacy">Privacy Policy . Terms & Conditions . Beware of Fraudsters</p>

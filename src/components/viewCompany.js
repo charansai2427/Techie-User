@@ -50,7 +50,7 @@ const ViewCompany = () => {
   useEffect(() => {
     
     if (!verifyToken(email,userId,token)) {
-      navigate("/accounts/login");
+      navigate("/login");
       window.location.reload();
     }
   }, [token]); 

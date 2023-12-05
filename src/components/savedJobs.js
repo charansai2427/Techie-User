@@ -21,7 +21,7 @@ function SavedJobs() {
   const email = localStorage.getItem("email");
   useEffect(() => {
     if (!verifyToken(email,userId,token)) {
-      navigate("/accounts/login");
+      navigate("/login");
       window.location.reload();
     }
   }, [token]);

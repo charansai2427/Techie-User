@@ -21,13 +21,14 @@ export default function Home() {
   useEffect(() => {
     dispatch(getAllJobs());
     if (!token) {
-      navigate("/accounts/login");
+      navigate("/login");
       window.location.reload();
     }
   }, [token]);
   return (
     <div className="homePage-container bg-white" style={{ backgroundColor:'rgb(243,243,243)'}}>
       <Header />
+      
       <div className="homePage-cards-container container">
         {jobData &&
           jobData.map((e) => {

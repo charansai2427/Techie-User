@@ -177,8 +177,8 @@
   }
   .icons{
       position: absolute;
-      bottom:-116em;
-      left:3.5em;
+      bottom:-117.3em ;
+      left:3em;
       font-size: 2em;
       display: flex;
       color:white;
@@ -203,4 +203,18 @@
   border-radius: 75px 75px 0 0;
   box-shadow: 0px -4px 6px 4px #fce6c5;
   background-color: white;
+}
+
+@media only screen and (min-width:1000px){
+  .homePage-cards-container{
+    width:1000px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+  }
+}
+
+@media only screen and (max-width:1029.33px){
+  .homePage-cards-container{
+    width:1029.33px;
+  }
 }
