@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
 .home-container {
   width: 100%;
   
@@ -5,6 +6,7 @@
     width:80em;
     height: 1.5em;
     background-color: rgb(244,179,74);
+
     
   }
   .home-container-header {
@@ -108,6 +110,7 @@
   position: absolute;
   top: 10%;
   right: 5%;
+
  
      p{
       width: 4rem;
@@ -320,11 +323,12 @@
       height: 42vh;
       width: 100%;
       gap: 1em;
-      padding: 1em;
+      padding: 2em;
       margin: 1em auto 0;
       display: flex;
       position: relative;
       top:0em;
+      left:2em;
       justify-content: space-between;
       align-items: flex-start;
       border-top: 1px solid #f4b34a;
@@ -391,7 +395,7 @@
       }
       .icons{
           position: absolute;
-          bottom:3em ;
+          bottom:3.2em ;
           left:2em;
           font-size: 2em;
           display: flex;
@@ -408,10 +412,29 @@
         margin-right: 14em;
       }
     }
+
     
   }
     
     
 
 
-  
+  .bisearch{
+    position: absolute; 
+    top: 1.6em;
+     left: 29.5em;
+      font-size: 1.5em; 
+      color: gray;
+      opacity: 0.5;
+  }
+  .inpsearch{
+    position: relative;
+     top: 0.1em;
+      left: 0.25em; 
+      border-radius: 50px; 
+      width: 27em;
+       height: 3em;
+       border: solid rgb(232,235,238);
+       text-align:center;
+      //  opacity:0.5;
+  }

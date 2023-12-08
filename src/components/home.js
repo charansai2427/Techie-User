@@ -42,7 +42,6 @@ export default function Home() {
           <div >
             <select 
               onChange={(e) =>{
-                //  dispatch(filterJobs({ filterInp: e.target.value }))
                 if(e.target.value == "All") {
                   setFiltJobs( jobData.map((i) => i))
                   setOpen(true)

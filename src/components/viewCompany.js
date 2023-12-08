@@ -2,11 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { followCompany, getCompanyJobs, getOneCompany } from "../redux/slices/dataSlice";
 import { Link, useMatches, useNavigate, useParams } from "react-router-dom";
-import {BsInstagram} from "react-icons/bs"
-import { FaArrowRightLong } from "react-icons/fa6";
-import { AiFillLinkedin } from "react-icons/ai";
-import { CiMail } from "react-icons/ci";
-import { FaTwitter } from "react-icons/fa";
+
 import Header from "./header";
 import "../styles/home.scss";
 import "../styles/viewCompany.scss"
@@ -75,38 +71,35 @@ const ViewCompany = () => {
         <div className="h2">{company && company.company_name} , {company && company.location}</div>
          <hr/>
 
-        <div className="card-profile shadow border rounded pt-1 p-2" style={{height:'19vh'}}>
-          <p style={{ backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16) ,color:'white'}}>
+        <div className=" card-pic card-profile shadow border rounded pt-1 p-2">
+          <p style={{ backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16)}}>
             {company.company_name &&
               company.company_name.slice(0, 2).toUpperCase()}
           </p>
           <div><b>{company && company.company_name}</b></div>
-          <div style={{color:'gray',position:'absolute',top:'16.3em',left:'10.5em'}}>{
+          <div className="companyloc">{
             company && company.location
           }
           </div>
           <br/>
-          <b style={{position:'absolute',top:'18em',left:'10.5em'}}>About Company</b>
+          <b className="abtcomp">About Company</b>
         </div>
         <div
-          style={{ backgroundColor: "rgb(244,179,74)",marginTop:'2em' }}
-          className="d-flex justify-content-evenly align-items p-2"
+          className="orbar d-flex justify-content-evenly align-items p-2"
         >
-          <div
+          <div className="hom"
             onClick={handleClick4}
-            style={{ fontSize: "1.1rem", fontWeight: "600", cursor: "pointer" }}
           >
             Home{" "}
           </div>
-          <div
-            style={{ fontSize: "1.1rem", fontWeight: "600", cursor: "pointer" }}
+          <div className="abt"
+
             onClick={handleClick3}
           >
             About
           </div>
-          <div
+          <div className="jobss"
             onClick={handleClick2}
-            style={{ fontSize: "1.1rem", fontWeight: "600", cursor: "pointer" ,gridTemplateColumns:'(2,1fr)'}}
           >
             Jobs
           </div>
@@ -146,17 +139,13 @@ const ViewCompany = () => {
                     </div>
                     <div>
                       <label className="h6">Skills :</label>
-                      <div className="d-flex" style={{ columnGap: "0.3rem" }}>
+                      <div className=" skil d-flex">
                         {e?.value?.skills &&
                           e?.value?.skills.split(",").map((i) => {
                             return (
                               <div>
                                 <span
-                                  style={{
-                                    fontSize: "0.8rem",
-                                    padding: "0 0.2rem 0 0.2rem",
-                                  }}
-                                  className="bg-secondary text-white rounded-pill"
+                                  className="skils bg-secondary text-white rounded-pill"
                                 >
                                   {i}
                                 </span>
@@ -168,37 +157,37 @@ const ViewCompany = () => {
                     <div className="d-flex gap-1 ">
                       <div>
                         <span
-                          style={{
-                            fontSize: "0.7rem",
-                            padding: "0 0.2rem 0 0.3rem",
-                          }}
-                          className=" text-success border border-success rounded-pill"
+                          // style={{
+                          //   fontSize: "0.7rem",
+                          //   padding: "0 0.2rem 0 0.3rem",
+                          // }}
+                          className="skils text-success border border-success rounded-pill"
                         >
                           HIRING
                         </span>
                       </div>
                       <div>
                         <span
-                          style={{
-                            fontSize: "0.7rem",
-                            padding: "0 0.2rem 0 0.2rem",
-                          }}
-                          className="bg-secondary text-white rounded-pill"
+                          // style={{
+                          //   fontSize: "0.7rem",
+                          //   padding: "0 0.2rem 0 0.2rem",
+                          // }}
+                          className=" skils bg-secondary text-white rounded-pill"
                         >
                           {e?.value?.experience}
                         </span>
                       </div>
                       <div>
-                        <span
-                          style={{
-                            fontSize: "0.7rem",
-                            padding: "0 0.2rem 0 0.2rem",
-                          }}
+                        <span className="skils"
+                          // style={{
+                          //   fontSize: "0.7rem",
+                          //   padding: "0 0.2rem 0 0.2rem",
+                          // }}
                         >
                           {e?.value?.salary && e?.value?.salary == "" ? (
                             <span className="bg-white"></span>
                           ) : (
-                            <span className="bg-secondary text-white rounded-pill">
+                            <span className=" skils bg-secondary text-white rounded-pill">
                               {" "}
                               {e?.value?.salary}
                             </span>
@@ -207,25 +196,25 @@ const ViewCompany = () => {
                       </div>
                       <div>
                         <span
-                          style={{
-                            fontSize: "0.7rem",
-                            padding: "0 0.2rem 0 0.2rem",
-                          }}
-                          className="bg-secondary text-white rounded-pill"
+                          // style={{
+                          //   fontSize: "0.7rem",
+                          //   padding: "0 0.2rem 0 0.2rem",
+                          // }}
+                          className="skils bg-secondary text-white rounded-pill"
                         >
                           {e?.value?.openings}
                         </span>
                       </div>
                     </div>
-                    <div className="card-profile">
-                      <p style={{ backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16) ,color:'white'}}>{ e?.value?.company_name && e?.value?.company_name.slice(0, 2).toUpperCase()}</p>
+                    <div className="card-pic card-profile">
+                      <p style={{ backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16)}}>{ e?.value?.company_name && e?.value?.company_name.slice(0, 2).toUpperCase()}</p>
                     </div>
-                    <Link to={"/viewJOb/" + e._id}>
-                      {" "}
-                      <div className="viewjob">
-                        view job <BsArrowRight />
-                      </div>
-                    </Link>
+                    <Link to={"/viewJOb/" + e?._id}>
+                    {" "}
+                    <div className="viewjob">
+                      View Job <BsArrowRight />
+                    </div>
+                  </Link>
                   </div>
                 );
               })}

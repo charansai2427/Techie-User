@@ -32,9 +32,9 @@ export default function Register() {
         </div>
 
         <div className='right' style={{display:'flex',flexDirection:'row',justifyContent:'center',alignItems:'center',columnGap:'2em',marginLeft:'20em',marginTop:'-25.5em'}}>
-               <div style={{backgroundColor:'black',border:'2px solid  #f4b34a',borderRadius:'50px',height:'1em',width:'1em'}}></div>
-               <div style={{width:'25em',height:'0.1em',backgroundColor:'rgb(244,179,74)'}}></div>
-               <div style={{backgroundColor:'rgb(244,179,74)',borderRadius:'50px',height:'1em',width:'1em'}}></div> 
+        <div className="blacircle"></div>
+               <div className="oraline"></div>
+               <div className="oracircle"></div> 
             </div>
             <br/>
             <img className="panda" src="https://res.cloudinary.com/cliqtick/image/upload/v1692600339/icons/logo-techie-_IE_uqk1bc.png"  style={{width:'11em',height:'12vh',marginLeft:'44.5em'}}/>
@@ -44,11 +44,11 @@ export default function Register() {
             <div className='form' onSubmit={handleClick} style={{display:'grid',gridTemplateColumns:'repeat(2,1fr)',gap:'0.5em',paddingLeft:'20%',paddingRight:'10%',paddingTop:'1%',marginLeft:'15em',columnGap:'0%'}}>
             {/* <Form > */}
           <FormGroup>
-            <input
+            <input className="invalu"
               id="exampleDatetime"
               name="username"
               placeholder="User Name"
-              type="text" style={{width:'80%',height:'8vh',textAlign:'start',paddingLeft:'4%'}}
+              type="text"
               onChange={(e) =>
                 setFormData({ ...formData, username: e.target.value })
               }
@@ -57,10 +57,10 @@ export default function Register() {
 
               <FormGroup>
               <input
-               id="Email"
+               id="Email" className="invalu"
                name="email"
                placeholder="Email "
-               type="email"  style={{width:'80%',height:'8vh',textAlign:'start',paddingLeft:'4%'}}
+               type="email"  
                onChange={(e) =>
                 setFormData({ ...formData, email: e.target.value })
               }
@@ -69,10 +69,10 @@ export default function Register() {
 
               <FormGroup>
             <input
-              id="exampleNumber"
+              id="exampleNumber" className="invalu"
               name="number"
               placeholder="Phone"
-              type="text" style={{width:'80%',height:'8vh',textAlign:'start',paddingLeft:'4%'}}
+              type="text"
               onChange={(e) =>
                 setFormData({ ...formData, mobilenumber: e.target.value })
               }
@@ -82,12 +82,10 @@ export default function Register() {
 
               <FormGroup>
             <input
-              id="Password"
+              id="Password" className="invalu"
               name="password"
               placeholder="Password"
               type="password"
-              style={{width:'80%',height:'8vh',textAlign:'start',paddingLeft:'4%'}}
-              
               onChange={(e) =>
                 setFormData({ ...formData, password: e.target.value })
               }
@@ -96,10 +94,10 @@ export default function Register() {
 
           <FormGroup>
             <input
-              id="examplePassword"
+              id="examplePassword" className="invalu"
               name="confirmpassword"
               placeholder="Confirm password"
-              type="password" style={{width:'80%',height:'8vh',textAlign:'start',paddingLeft:'4%'}}
+              type="password"
               onChange={(e) =>
                 setFormData({ ...formData, confirmpassword: e.target.value })
               }
@@ -108,11 +106,11 @@ export default function Register() {
            {/* </Form> */}
               </div>
 
-   <FormGroup check style={{paddingTop:'3em',marginLeft:'40em'}}>
+   <FormGroup check className="fmgrp">
             <Input type="checkbox" />
-            <Label check style={{color:"rgb(244,179,74)",cursor:'pointer'}}>I here by agree to terms and conditions</Label>
+            <Label check className='label'>I here by agree to terms and conditions</Label>
           </FormGroup>
-          <Label className="registers"onClick={OnHandleClick1} style={{marginLeft:'49em',cursor:'pointer',color:'rgb(244,179,74)'}}>Already Have An Account ? </Label>
+          <Label className="registers"onClick={OnHandleClick1}>Already Have An Account ? </Label>
 
     </div>
   )

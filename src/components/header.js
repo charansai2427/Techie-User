@@ -41,7 +41,7 @@ function Header() {
         <div className="home-container ">
         <div className="line"></div>
         
-        <div className="home-container-header">
+        <div className="home-container-header container ">
           {/* <div className='resleft'> */}
 
           <div>
@@ -51,29 +51,12 @@ function Header() {
             />
           </div>
           <div className="">
-          <input type="search" placeholder="Search by Keyboard / desigination / role / company" style={{ position: 'relative', top: '0.1em', left: '2em', borderRadius: '50px', width: '27em', height: '3em', border: 'solid rgb(232,235,238)' }}  onChange={(e)=>setSearch(e.target.value)}/>
-          <BiSearch style={{ position: "absolute", top: '1.35em', left: "28em", fontSize: '1.5em', color: 'gray' }} onClick={searchClick}/>
+          <input type="search" placeholder="Search Company" className='inpsearch' onChange={(e)=>setSearch(e.target.value)}/>
+          <BiSearch className='bisearch' onClick={searchClick}/>
         </div>
           {/* </div> */}
    
-          <div>
-          <Link
-            to={"/profile/edit/" + userId}
-            style={{
-              cursor: "pointer",
-              textDecoration: "none",
-              color: "gray",
-              fontSize:'1.5em',
-            }}
-          >
-            Build My Profile
-          </Link>
-          <Progress
-            color="warning"
-            striped
-            value={50} style={{height:'1.5vh'}}
-          />
-        </div>
+   
           <div  onClick={() => navigate("/ifollow")} style={{cursor: "pointer"}} className="border rounded-pill p-2 border-success text-success ">
             iFollow 
           </div>

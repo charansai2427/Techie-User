@@ -5,7 +5,6 @@ import Register from "./components/register";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Home from "./components/home";
 import Login from "./components/login";
-import ProfileForm from "./components/profileForm";
 
 import ViewJob from "./components/viewJob";
 import Front from "./components/frontPage";
@@ -23,10 +22,6 @@ function App() {
     {
       path: "/home",
       element: <Home />,
-    },
-    {
-      path: "/profile/edit/:userId",
-      element: <ProfileForm />,
     },
     {
       path: "/login",

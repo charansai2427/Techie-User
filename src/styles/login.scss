@@ -21,7 +21,39 @@
             margin-left:7em ;
         }
     }
+    .right{
+        display:flex;
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+        column-gap:2em;
+        margin-left:20em;
+        margin-top:-25.5em;
+        .blacircle{
+            background-color:black;
+            border:2px solid  #f4b34a ;
+            border-radius:50px;
+            height:1em;
+            width:1em;
+        }
+        .oraline{
+            width:25em;
+            height:0.1em;
+            background-color:rgb(244,179,74);
+        }
+        .oracircle{
+            background-color:rgb(244,179,74);
+            border-radius:50px;
+            height:1em;
+            width:1em;
+    }
    
+}
+}
+.tecp{
+    width:11em;
+    height:12vh;
+    margin-left:44.5em;
 }
 .login{
     display: grid;
@@ -30,12 +62,50 @@
    padding-right: 3em;
     gap: 0em;
     padding-top: 1em;
+    line-height:3em;
+    margin-left:11em;
+    .inpp{
+        
+        width:80%;
+        height:8vh;
+        text-align:start;
+        padding-left:4%;
+        color:rgb(244,179,74);
+    }
+}
+.invalu{
+    width:80%;
+    height:8vh;
+    text-align:start;
+    padding-left:4%;
 }
 
+.logins{
+    margin-left:60%;
+    margin-top:-2em;
+    cursor:pointer;
+    color:rgb(244,179,74);
+}
 ::-ms-input-placeholder{
     color:rgb(244,179,74);
 }
 
 ::placeholder{
     color:rgb(244,179,74);
+}
+
+.registers{
+    margin-left:49em;
+    cursor:pointer;
+    color:rgb(244,179,74);
+}
+
+.label{
+    color:rgb(244,179,74);
+    cursor:pointer;
+}
+
+.fmgrp{
+    padding-top:3em;
+    margin-left:40em;
 }
