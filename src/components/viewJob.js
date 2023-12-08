@@ -232,7 +232,7 @@ const userId = localStorage.getItem("userId")
                 <div className="inside">
                     <img src="https://res.cloudinary.com/cliqtick/image/upload/v1692600339/icons/logo-techie-_IE_uqk1bc.png" style={{ width: '7em', height: '3em', marginTop: '1em', marginLeft: '10em' }} />
                     <p className="privacy">Privacy Policy . Terms & Conditions . Beware of Fraudsters</p>
-                    <p className="copy">Copyright © 2023 codezo.in | All Rights Reserved</p>
+                    <p className="copy">Copyright © 2023 techiepanda.in | All Rights Reserved</p>
                     <div className="icons">
                         <FaTwitter />
                         <BsInstagram />

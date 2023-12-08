@@ -24,10 +24,6 @@ function Header() {
     const handleClick = () => {
         setOpen(!open);
       };
-      const handleClick2 =() =>{
-        navigate('/Alljobs')
-      }
-
       const searchClick = () =>{
         dispatch(getSearchJobs({searchedInput:search}))
       }
@@ -44,17 +40,21 @@ function Header() {
  
         <div className="home-container ">
         <div className="line"></div>
+        
         <div className="home-container-header">
+          {/* <div className='resleft'> */}
+
           <div>
             <img
               className="logo"
               src="https://res.cloudinary.com/cliqtick/image/upload/v1692600339/icons/logo-techie-_IE_uqk1bc.png" onClick={() => navigate("/home")}
             />
           </div>
-          <div>
+          <div className="">
           <input type="search" placeholder="Search by Keyboard / desigination / role / company" style={{ position: 'relative', top: '0.1em', left: '2em', borderRadius: '50px', width: '27em', height: '3em', border: 'solid rgb(232,235,238)' }}  onChange={(e)=>setSearch(e.target.value)}/>
-          <BiSearch style={{ position: "absolute", top: '1.35em', left: "26.5em", fontSize: '1.5em', color: 'gray' }} onClick={searchClick}/>
+          <BiSearch style={{ position: "absolute", top: '1.35em', left: "28em", fontSize: '1.5em', color: 'gray' }} onClick={searchClick}/>
         </div>
+          {/* </div> */}
    
           <div>
           <Link
@@ -74,7 +74,7 @@ function Header() {
             value={50} style={{height:'1.5vh'}}
           />
         </div>
-          <div  onClick={() => navigate("/ifollow")} style={{cursor: "pointer"}} className="border rounded-pill p-2 border-success text-success">
+          <div  onClick={() => navigate("/ifollow")} style={{cursor: "pointer"}} className="border rounded-pill p-2 border-success text-success ">
             iFollow 
           </div>
           <div onClick={handleClick} className="profile-name" style={{ backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16) ,color:'white'}}>

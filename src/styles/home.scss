@@ -2,8 +2,8 @@
   width: 100%;
   
   .line{
-    width:100%;
-    height: 1.8rem;
+    width:80em;
+    height: 1.5em;
     background-color: rgb(244,179,74);
     
   }
@@ -14,25 +14,25 @@
     align-items: center;
     padding-top: 1rem;
     padding: 1rem ;
-    box-shadow: 0 0 0.1rem;
+    // box-shadow: 0 0 0.1rem;
     div:nth-child(1) {
       .logo {
-        width: 7rem;
+        width: 10em;
        cursor: pointer;
       }
     }
-    div:nth-child(2) {
-      .searchbar-div{
-        border-radius: 30%;
-      }
-      .searchbar {
-        width: 15rem;
-        border-radius: 10%;
-        &:focus {
-          outline: none;
-        }
-      }
-    }
+    // div:nth-child(2) {
+    //   .searchbar-div{
+    //     border-radius: 30%;
+    //   }
+    //   .searchbar {
+    //     width: 15rem;
+    //     border-radius: 10%;
+    //     &:focus {
+    //       outline: none;
+    //     }
+    //   }
+    // }
     .profile-name{
        
         display: flex;
@@ -93,9 +93,7 @@
     border-radius: 1%;
      padding: 1rem;
      position: relative;
-    .card-container-01{
-         
-    }
+   
     .viewjob{
       position: absolute;
       bottom: 5%;
@@ -129,10 +127,20 @@
 
 
 .foter{
-  // background-color: rgb(244,179,74);
-  // width:100%;
-  // height:25vh;
-  // margin-top: 2em;
+  height: 45vh;
+  width: 95%;
+  gap: 1em;
+  padding: 3em;
+  margin: 3em auto 0;
+  display: flex;
+  position: relative;
+  top:0em;
+  justify-content: space-between;
+  align-items: flex-start;
+  border-top: 1px solid #f4b34a;
+  border-radius: 75px 75px 0 0;
+  box-shadow: 0px -4px 6px 4px #fce6c5;
+  background-color: white;
   .inside{
       .privacy{
           color:white;
@@ -177,8 +185,8 @@
   }
   .icons{
       position: absolute;
-      bottom:-117.3em ;
-      left:3em;
+      bottom:3.5em ;
+      left:2em;
       font-size: 2em;
       display: flex;
       color:white;
@@ -190,31 +198,220 @@
   }
 }
 
-.foter {
-  height: 45vh;
-  width: 95%;
-  gap: 1em;
-  padding: 3em;
-  margin: 3em auto 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  border-top: 1px solid #f4b34a;
-  border-radius: 75px 75px 0 0;
-  box-shadow: 0px -4px 6px 4px #fce6c5;
-  background-color: white;
-}
 
-@media only screen and (min-width:1000px){
-  .homePage-cards-container{
-    width:1000px;
-    display: grid;
-    grid-template-columns: repeat(1,1fr);
-  }
-}
 
-@media only screen and (max-width:1029.33px){
-  .homePage-cards-container{
-    width:1029.33px;
+
+// @media only screen and (min-width:1268px)  {
+//   .line{
+//     width:84em;
+  
+//     height: 1.5em;
+//     background-color: rgb(244,179,74) !important;
+//     .resleft{
+//       .logo{
+//         width:10em;
+//       }
+//     }
+//   }
+  
+//   }
+  
+  
+//   @media only screen and (max-width:700px) {
+//     .line{
+//     width:10em;
+  
+//       height: 1.5em;
+      
+//       background-color:skyblue  !important;
+//       .resleft{
+//         .logo{
+//           width:1em;
+//         }
+//       }
+//     }
+    
+//     }
+
+    
+      
+@media only screen and (min-width:1268px)  {
+  .foter{
+    height: 45vh;
+    width: 95%;
+    gap: 1em;
+    padding: 3em;
+    margin: 3em auto 0;
+    display: flex;
+    position: relative;
+    top:0em;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-top: 1px solid #f4b34a;
+    border-radius: 75px 75px 0 0;
+    box-shadow: 0px -4px 6px 4px #fce6c5;
+    background-color: white;
+    .inside{
+        .privacy{
+            color:white;
+            margin-left: 9em;
+        }
+        .copy{
+            color:rgb(187, 166, 133);
+            margin-left: 9em;
+        }
+        .website{
+          margin-top: 2.5em;
+          margin-left: 1em;
+          
+        }
+        .contact{
+          margin-top: 0em;
+          margin-left: 2em;
+        }
+  
+        .mid{
+          margin-top: -3.3em;
+          margin-left: 7em;
+          display: flex;
+          flex-direction: column;
+          column-gap: 2em;
+          font-size: 50px;
+  
+        }
+        .mid2{
+          margin-top: -3.5em;
+          margin-left: 10em;
+          display: flex;
+          flex-direction: column;
+          font-size: 50px;
+          column-gap:0em;
+          .mat{
+            line-height: 0.2em;
+          }
+         
+        }
+  
+    }
+    .icons{
+        position: absolute;
+        bottom:3.5em ;
+        left:2em;
+        font-size: 2em;
+        display: flex;
+        color:white;
+        justify-content: space-evenly;
+        margin-right: 3em;
+        column-gap: 0em;
+        width: 5em;
+        height:5vh;
+    }
   }
+  .map{
+  width:18em;
+  height:11em;
+  margin-top: -0.5em;
+  }
+
 }
+  
+  @media only screen and (max-width:700px) {
+    .foter{
+      height: 42vh;
+      width: 100%;
+      gap: 1em;
+      padding: 1em;
+      margin: 1em auto 0;
+      display: flex;
+      position: relative;
+      top:0em;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-top: 1px solid #f4b34a;
+      border-radius: 75px 75px 0 0;
+      box-shadow: 0px -4px 6px 4px #fce6c5;
+      background-color: white;
+      .inside{
+          .privacy{
+              color:white;
+              margin-left: 6em;
+          }
+          .copy{
+              color:rgb(187, 166, 133);
+              margin-left: 6em;
+          }
+          .website{
+            margin-top: 2.5em;
+            margin-left: 1em;
+            
+          }
+          .contact{
+            margin-top: 0em;
+            margin-left: 1.5em;
+          }
+    
+          .mid{
+            margin-top: -10.5em;
+            margin-left: 12em;
+            display: flex;
+            flex-direction: column;
+            column-gap: 1em;
+            font-size: 15px;
+            p{
+              b{
+                font-size: 15px;
+              }
+            }
+    
+          }
+          .mid2{
+            margin-top: -3.5em;
+            margin-left: 5em;
+            display: flex;
+            flex-direction: column;
+            font-size: 50px;
+            column-gap:0em;
+            p{
+              margin-left: 1em;
+              b{
+                font-size: 15px;
+                
+              }
+            }
+            .mat{
+              // line-height: 0.2em;
+              p{
+                font-size: 9px;
+                
+              }
+            }
+           
+          }
+    
+      }
+      .icons{
+          position: absolute;
+          bottom:3em ;
+          left:2em;
+          font-size: 2em;
+          display: flex;
+          color:white;
+          justify-content: space-evenly;
+          margin-right: 3em;
+          column-gap: 0em;
+          width: 2em;
+          height:5vh;
+      }
+      .map{
+        width:0em;
+        height:0em;
+        margin-right: 14em;
+      }
+    }
+    
+  }
+    
+    
+
+
+  
