@@ -1,5 +1,5 @@
-import { FormGroup, Label, Input} from "reactstrap";
-import {  useNavigate } from "react-router-dom";
+import { FormGroup, Label, Input } from "reactstrap";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "../styles/login.scss";
 import { LoginUser } from "../redux/slices/dataSlice";
@@ -14,65 +14,74 @@ export default function Login() {
     e.preventDefault();
     dispatch(LoginUser(formData001));
   };
-  const handleClick2 = (e) =>{
+  const handleClick2 = (e) => {
     e.preventDefault();
-    navigate("/register")
-  }
+    navigate("/register");
+  };
   useEffect(() => {
-
     if (token) {
-
       navigate("/home");
     }
-  }, [token])
+  }, [token]);
   return (
-    <div className='login-container'>
-        <div className='left'>
-            <img src ="https://res.cloudinary.com/cliqtick/image/upload/v1684308943/create_user_ryynll.jpg"/>
-            <button type='button'  onClick={handleClick001}>Login</button>
+    <div className="login-container-main">
+      <div className="login-container">
+        <div className="left">
+          <div className="wallpaper">
+            <img src="https://res.cloudinary.com/cliqtick/image/upload/v1684308943/create_user_ryynll.jpg" />
+          </div>
         </div>
-      
-            <div className='right'>
-               <div className="blacircle"></div>
-               <div className="oraline"></div>
-               <div className="oracircle"></div> 
+
+        <div className="right">
+          <div className="right-upper">
+            <div className="blacircle"></div>
+            <div className="oraline"></div>
+            <div className="oracircle"></div>
+          </div>
+          <div className="logo-container">
+            <div className="logo">
+              <img src="https://res.cloudinary.com/cliqtick/image/upload/v1692600339/icons/logo-techie-_IE_uqk1bc.png" />
             </div>
-            <br/>
-            <img className="tecp" src="https://res.cloudinary.com/cliqtick/image/upload/v1692600339/icons/logo-techie-_IE_uqk1bc.png"/>
-
-            <br/>
-
-            <div className='login'>
-              <FormGroup>
-              <input  className="inpp"
-               id="exampleEmail"
-               name="email"
-               placeholder="Email Address"
-               type="email" 
-               onChange={(e) =>
-                setFormData001({ ...formData001, email: e.target.value })
-              }
-               ></input>
-              </FormGroup>
-
-
-              <FormGroup>
-            <input className="inpp"
-              id="Password"
-              name="password"
-              placeholder="Login with Password"
-              type="password"
-              onChange={(e) =>
-                setFormData001({ ...formData001, password: e.target.value })
-              }
-            />
-          </FormGroup>
+          </div>
+          <div className="login">
+            <div>
+              <input
+                className="inpp"
+                id="exampleEmail"
+                name="email"
+                placeholder="Email Address"
+                type="email"
+                onChange={(e) =>
+                  setFormData001({ ...formData001, email: e.target.value })
+                }
+              ></input>
             </div>
-            <br/>
-            <br/>
-          <Label className="logins" onClick={handleClick2}>Create Account ? Register</Label>
-          
+
+            <div>
+              <input
+                className="inpp"
+                id="Password"
+                name="password"
+                placeholder="Login with Password"
+                type="password"
+                onChange={(e) =>
+                  setFormData001({ ...formData001, password: e.target.value })
+                }
+              />
+            </div>
+            <div className="register" onClick={handleClick2}>
+              <div>Create Account ? Register</div>
+            </div>
+            <div className="login-btn">
+              <div>
+                <button type="button" onClick={handleClick001}>
+                  Login
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  )
+  );
 }
-

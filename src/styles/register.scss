@@ -1,11 +1,11 @@
-.login-container-main {
+.register-container-main {
     width: 100vw;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
   
-    .login-container {
+    .register-container {
       width: 100%;
       display: flex;
       justify-content: center;
@@ -28,7 +28,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        row-gap: 3rem;
+        row-gap: 1.5rem;
         .right-upper {
           width: 100%;
           display: flex;
@@ -66,23 +66,22 @@
             }
           }
         }
-        .login {
+        .register {
           width: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;
           justify-content: center;
           row-gap: 1rem;
-          div:nth-child(1),
-          div:nth-child(2) {
+          .input-container {
             width: 100%;
             input {
               width: 45%;
               height: 3rem;
-              border-radius: 10px ;
+              border-radius: 10px;
               transform: translateX(60%);
               color: rgb(244, 179, 74);
-              padding-left:5em ;
+              padding-left: 5em;
             }
             ::-ms-input-placeholder{
               color:rgb(244,179,74);
@@ -91,34 +90,35 @@
           ::placeholder{
               color:rgb(244,179,74);
           }
+          
           }
-          .register {
-            div {
-              cursor: pointer;
-              color: #f4b34a;
-            }
+        }
+        .AlreadyRegis {
+          div {
+            cursor: pointer;
+            color: orange;
           }
-          .login-btn {
+        }
+        .register-btn {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          div {
             width: 100%;
             display: flex;
             justify-content: center;
             align-items: center;
-            div {
-              width: 100%;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              button {
-                width: 45%;
-                height: 3rem;
-                background-color: orange;
-                border: none;
-                outline: none;
-                border-radius: 10px;
-                font-size: 1.3em;
-                padding: 0.2rem;
-                color: white;
-              }
+            button {
+              width: 45%;
+              height: 3rem;
+              background-color: orange;
+              border: none;
+              outline: none;
+              border-radius: 10px;
+              font-size: 1.3em;
+              padding: 0.2rem;
+              color: white;
             }
           }
         }
@@ -127,14 +127,14 @@
   }
   
   @media only screen and (min-width: 320px) and (max-width: 480px) {
-    .login-container-main {
-      width: 100vw;
-      height: 100vh;
+    .register-container-main {
+     width: 100%;
+     height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
-  
-      .login-container {
+      padding: 0.9rem 0.9rem;
+      .register-container {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -161,7 +161,7 @@
           flex-direction: column;
           justify-content: center;
           align-items: center;
-          row-gap: 2rem;
+          row-gap: 1.5rem;
           .right-upper {
             width: 100%;
             display: flex;
@@ -199,15 +199,15 @@
               }
             }
           }
-          .login {
+          .register {
             width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             row-gap: 1rem;
-            div:nth-child(1),
-            div:nth-child(2) {
+  
+            .input-container {
               width: 100%;
               input {
                 width: 55%;
@@ -217,12 +217,13 @@
                 color: rgb(244, 179, 74);
               }
             }
-            .register {
+  
+            .AlreadyRegis {
               div {
                 cursor: pointer;
               }
             }
-            .login-btn {
+            .register-btn {
               width: 100%;
               display: flex;
               justify-content: center;
