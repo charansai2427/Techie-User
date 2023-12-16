@@ -2,15 +2,13 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useMatch, useMatches, useNavigate,Link } from "react-router-dom";
 import { getJob , saveJob } from "../redux/slices/dataSlice";
-import {BsInstagram} from "react-icons/bs"
 import { FaArrowRightLong } from "react-icons/fa6";
-import { AiFillLinkedin } from "react-icons/ai";
-import { CiMail } from "react-icons/ci";
-import { FaTwitter } from "react-icons/fa";
 import Header from "./header";
 import { BsBookmark } from "react-icons/bs";
 import { verifyToken } from "../utils/utlis";
 import "../styles/viewJob.scss";
+import Footer from "./footer";
+import Navigationpanel from "./navigationpanel";
 
 function ViewJob() {
   const dispatch = useDispatch();
@@ -38,7 +36,7 @@ const userId = localStorage.getItem("userId")
     }
   }, [token]);
   return (
-    <div className="job-container bg-white" 
+    <div className="job-container w-100% bg-white" 
     style={{backgroundColor:'rgb(243,243,243)'}}
     >
       <Header />
@@ -48,7 +46,7 @@ const userId = localStorage.getItem("userId")
           </div>
           <div style={{ cursor: "pointer" }}>
             <BsBookmark />{" "}
-            <span onClick={handleSaveJob}className="text-decoration-underline">
+            <span onClick={handleSaveJob}className="text-decoration-solid">
                     Save Job
                     </span>
           </div>
@@ -212,7 +210,7 @@ const userId = localStorage.getItem("userId")
         <div className="  card-company shadow border ">
          <div className="randoms" >
              <p   style={{backgroundColor: "#" + Math.floor(Math.random() * 16777215).toString(16), width:"3em", height:"3em", borderRadius:"50%",
-              display:"flex",alignItems:"center", justifyContent:"center", marginLeft:"1em", position:"absolute", top:"0.8em"
+              display:"flex",alignItems:"center", justifyContent:"center", marginLeft:"1em", position:"absolute", top:"0.8em",color:"white"
             }}>
             {getJobDetails.company_name &&
               getJobDetails.company_name.slice(0, 2).toUpperCase()}
@@ -221,7 +219,7 @@ const userId = localStorage.getItem("userId")
           <div className="locationcomp container">
             <div>
             {
-              <div><b>{getJobDetails && getJobDetails.company_name}</b></div>
+              <div>{getJobDetails && getJobDetails.company_name}</div>
             }
             </div>
             <div>
@@ -238,45 +236,21 @@ const userId = localStorage.getItem("userId")
       </div>
 
       <div className="container verify ">
-         <button  className="btn-verify">Verify Account to Apply</button>
+         <button onClick={() => {
+          window.scroll({
+            top: 0,
+            left: 0,
+            behavior: "smooth",
+          });
+         }}  className="btn-verify">Verify Account to Apply</button>
       </div>
 
          {/* ///footer// */}
 
      
 
-         <div className="foter container">
-               <div className="techie-div">
-                              <div>
-                                  <img className="techie-logo" src="https://res.cloudinary.com/cliqtick/image/upload/v1692600339/icons/logo-techie-_IE_uqk1bc.png"/>
-                              </div>
-                              <div className="sm-div">
-                                 <div><img className="sm-img" src="https://res.cloudinary.com/cliqtick/image/upload/v1686120164/techei_panda_website_images/Facebook-Icon_orvpxl.png" /></div>
-                                 <div><img className="sm-img" src="https://res.cloudinary.com/cliqtick/image/upload/v1686120165/techei_panda_website_images/LinkedIn-Icon_zcra9f.png" /></div>
-                                 <div> <img className="sm-img" src="https://res.cloudinary.com/cliqtick/image/upload/v1686120164/techei_panda_website_images/Instagram-Icon_ijchts.png" /></div>
-                              </div>
-                              <div className="" > https://techiepanda.in/</div>
-                              <div> +91 720 740 1718</div>
-               </div>
-               <div >
-                  <div className="resources" >Site Map</div>
-                  <div  className="resources">Resources</div>
-                  <div  className="resources">Blog</div>
-                  <div>FAQ</div>
-               </div>
-               <div className="techie-about">
-                   <div>Techie Panda</div>
-                   <div>About Us</div>
-                   <div>Meet Techie Panda</div>
-                   <div>Job Assistance</div>
-                   <div>Refund Policy</div>
-                   <div>Privacy and Cookie Policy</div>
-                   <div>Terms and Conditions</div>
-               </div>
-               <div className="techie-map">
-                   <div><iframe  className="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3800.0386556256476!2d83.23167277586289!3d17.74281769246731!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3967274842f4df%3A0x9711e68b73419d51!2sTechiepanda!5e0!3m2!1sen!2sin!4v1696832682466!5m2!1sen!2sin"  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"/></div>
-               </div>
-      </div>
+       <Footer/>
+       <Navigationpanel/>
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { getAllJobs, getSearchJobs } from "../redux/slices/dataSlice";
+import { getAllJobs, getSearchJobs, searchState } from "../redux/slices/dataSlice";
 import { BiSearch } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
-
 import "../styles/header.scss";
+import Home from "./home";
 
 function Header() {
   const token = localStorage.getItem("token");
@@ -14,14 +14,16 @@ function Header() {
   const searchJobs = useSelector((state) => state.User.value.searchJobs);
   const [open, setOpen] = useState(false);
   const [search, setSearch] = useState({});
-
+ 
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleClick = () => {
     setOpen(!open);
   };
+  
   const searchClick = () => {
     dispatch(getSearchJobs({ searchedInput: search }));
+    dispatch(searchState(true))
   };
 
   useEffect(() => {
@@ -33,13 +35,16 @@ function Header() {
   }, [token]);
 
   return (
-    <div className="header-container-main bg-white">
+    <div className="header-container-main bg-white ">
       <div className="header-container ">
         <div className="logo-container">
           <div className="logo">
             <img
               src="https://res.cloudinary.com/cliqtick/image/upload/v1692600339/icons/logo-techie-_IE_uqk1bc.png"
-              onClick={() => navigate("/home")}
+              onClick={() => {
+                    dispatch(searchState(false));
+                    navigate("/home")
+            }}
             />
           </div>
         </div>
@@ -73,6 +78,7 @@ function Header() {
         style={{ zIndex: "1" }}
       >
         <ul>
+          <li onClick={() => navigate("/profile/:userId")}>My Profile</li>
           <li>
             <Link
               to={"/savedJobs/" + userId}
@@ -92,6 +98,8 @@ function Header() {
           </li>
         </ul>
       </div>
+     
+      
     </div>
   );
 }

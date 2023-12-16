@@ -79,10 +79,10 @@
             input {
               width: 45%;
               height: 3rem;
-              border-radius: 10px ;
+              border-radius: 10px;
               transform: translateX(60%);
               color: rgb(244, 179, 74);
-              padding-left:5em ;
+              padding-left: 11%;
             }
             ::-ms-input-placeholder{
               color:rgb(244,179,74);
@@ -95,7 +95,6 @@
           .register {
             div {
               cursor: pointer;
-              color: #f4b34a;
             }
           }
           .login-btn {
@@ -215,11 +214,20 @@
                 border-radius: 10px;
                 transform: translateX(40%);
                 color: rgb(244, 179, 74);
+                padding-left: 11%;
               }
+              ::-ms-input-placeholder{
+                color:rgb(244,179,74);
+            }
+            
+            ::placeholder{
+                color:rgb(244,179,74);
+            }
             }
             .register {
               div {
                 cursor: pointer;
+                color: #f4b34a;
               }
             }
             .login-btn {

@@ -4,9 +4,7 @@
     .followcomp{
         display: grid;
         grid-template-columns: repeat(2,1fr);
-       
-      
-      
+
         .card-browse{
             width: 34em;
             height: 8em;
@@ -19,6 +17,9 @@
             margin-left: 1em;
             // box-shadow: 0 0em 0.2em 0.1 em rgb(248, 217, 217);
             position: relative;
+           
+    
+        
         }
     
         .random{
@@ -34,21 +35,32 @@
             position: absolute;
             left: 2em;
             top: 2em;
+            
+            
+    
         }
     
          .loc{
             position: absolute;
             left: 7em;
+    
          }
+       
+    
         .viewcomp{
             right: 5em;
             bottom: 1em;
             position: absolute;
         }
-    
+        
         .link{
             color: black;
+            text-decoration: solid;
         }
+    
+        
+        
+    
     }
     
     .browse{
@@ -85,51 +97,7 @@
         
     }
 }
-.foter{
-    height: 35vh;
-    width: 95%;
-    gap: 1em;
-    padding: 2em;
-    margin: 3em auto 0;
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    top:0em;
-    justify-content: space-between;
-    align-items: flex-start;
-    border-top: 1px solid #f4b34a;
-    border-radius: 75px 75px 0 0;
-    box-shadow: 0px -4px 6px 4px #fce6c5;
-    background-color: white;
-  
-  
-  
-  .techie-logo{
-    width: 10em;
-    height: 5em;
-  }
-  
-  .sm-div{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-top: 1em;
-    margin-bottom: 0.2em;
-  }
-  .sm-img{
-    width: 2em;
-  }
-  
-  .resourses{
-    font-weight: bold;
-    font-size: 2em;
-  }
-  
-  .map{
-    width: 20em;
-  }
-  
-  }
+
 
 @media only screen and (min-width:320px) and (max-width:480px) {
     
@@ -156,6 +124,9 @@
                 // box-shadow: 0 0em 0.2em 0.1em rgb(248, 217, 217);
                 position: relative;
                 left: -2em;
+               
+        
+            
             }
         
             .random{
@@ -171,6 +142,9 @@
                 position: absolute;
                 left: 0.5em;
                 top: 1em;
+                
+                
+        
             }
         
              .loc{
@@ -180,15 +154,23 @@
         
              }
       
+        
             .viewcomp{
                 right: 1em;
                 bottom: 1em;
-                position: absolute; 
+                position: absolute;
+        
+              
+                
             }
         
             .link{
                 color: black;
             }
+        
+            
+            
+        
         }
         
         .browse{
@@ -226,48 +208,6 @@
         }
     }
 
-    .foter{
-        height: 45vh;
-        width: 95%;
-        gap: 1em;
-        padding: 3em;
-        margin: 3em auto 0;
-        display: flex;
-        flex-wrap: wrap;
-        position: relative;
-        top:0em;
-        justify-content: space-between;
-        align-items: flex-start;
-        border-top: 1px solid #f4b34a;
-        border-radius: 75px 75px 0 0;
-        box-shadow: 0px -4px 6px 4px #fce6c5;
-        background-color: white;
-      
-      .techie-logo{
-        width: 10em;
-        height: 5em;
-      }
-      
-      .sm-div{
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        margin-top: 1em;
-        margin-bottom: 2em;
-      }
-      .sm-img{
-        width: 2em;
-      }
-      
-      .resourses{
-        font-weight: bold;
-        font-size: 2em;
-      }
-      
-      .map{
-        width: 15em;
-      }
-      
-      }
+   
 
 }

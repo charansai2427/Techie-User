@@ -11,7 +11,7 @@ import Front from "./components/frontPage";
 import Ifollow from "./components/ifollow";
 import ViewCompany from "./components/viewCompany";
 import SavedJobs from "./components/savedJobs";
-import SearchJob from "./components/searchJob";
+import Profile from "./components/profile";
 
 function App() {
   const router = createBrowserRouter([
@@ -49,8 +49,8 @@ function App() {
       element: <SavedJobs/>
     },
     {
-      path:'searchJob',
-      element:<SearchJob/>
+      path: "/profile/:userId",
+      element : <Profile/>
     }
   ]);
   return (

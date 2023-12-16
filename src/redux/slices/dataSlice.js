@@ -26,11 +26,15 @@ const dataSlice = createSlice({
       getSavedJob: [],
       postFollowCompany : {},
       getUserFollowedComp:[],
-      getSearchJob:[]
+      getSearchJob:[],
+      searchOn : false
     },
   },
-
-  reducers: {},
+  reducers: {
+    searchState : (state,action) => {
+      state.value.searchOn = action.payload
+    }
+  },
 
   extraReducers: (builder) => {
     builder.addCase(postData.fulfilled, (state, action) => {
@@ -370,4 +374,5 @@ export const getSearchJobs = createAsyncThunk("getSearchJobs", async({searchedIn
   const {data} = await axios.get(baseUrl3 + "/search/search?search="+searchedInput)
   return data
 })
+export const { searchState } = dataSlice.actions;
 export default dataSlice.reducer;
