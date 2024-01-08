@@ -44,74 +44,83 @@ export default function Register() {
             </div>
           </div>
           <div className="register">
-            <div className="input-container">
+            <div className="form-item">
               <input
-                className="invalu"
+                className="invalu p-3"
                 id="exampleDatetime"
                 name="username"
-                placeholder="User Name"
-                type="text"
+                // placeholder="User Name"
+                type="text" autoComplete="off" required
                 onChange={(e) =>
                   setFormData({ ...formData, username: e.target.value })
                 }
-              ></input>
+              />
+              <label for="username">User Name</label>
             </div>
 
-            <div className="input-container">
+            <div className="form-item">
               <input
                 id="Email"
-                className="invalu"
+                className="invalu p-3"
                 name="email"
-                placeholder="Email "
-                type="email"
+                // placeholder="Email "
+                type="text"  autoComplete="off" required
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
-              ></input>
+              />
+              <label for="email">Email</label>
+
             </div>
 
-            <div className="input-container">
+            <div className="form-item">
               <input
                 id="exampleNumber"
-                className="invalu"
+                className="invalu p-3"
                 name="number"
-                placeholder="Phone"
-                type="text"
+                // placeholder="Phone"
+                type="text"  autoComplete="off" required
                 onChange={(e) =>
                   setFormData({ ...formData, mobilenumber: e.target.value })
                 }
-              ></input>
+              />
+              <label for="phone">Phone</label>
+
             </div>
 
-            <div className="input-container">
+            <div className="form-item">
               <input
                 id="Password"
-                className="invalu"
+                className="invalu p-3"
                 name="password"
-                placeholder="Password"
-                type="password"
+                // placeholder="Password"
+                type="password"  autoComplete="off" required
                 onChange={(e) =>
                   setFormData({ ...formData, password: e.target.value })
                 }
-              ></input>
+              />
+              <label for="password">Password</label>
+
             </div>
 
-            <div className="input-container">
+            <div className="form-item">
               <input
                 id="examplePassword"
-                className="invalu"
+                className="invalu p-3"
                 name="confirmpassword"
-                placeholder="Confirm password"
-                type="password"
+                // placeholder="Confirm password"
+                type="password"  autoComplete="off" required
                 onChange={(e) =>
                   setFormData({ ...formData, confirmpassword: e.target.value })
                 }
-              ></input>
+              />
+              <label for="confirmpassword">Confirm Password</label>
+
             </div>
           </div>
 
           <div className="AlreadyRegis" onClick={OnHandleClick1}>
-            <div>Already Have An Account ?</div>
+            <div>Please Login</div>
           </div>
           <div className="register-btn">
             <div>

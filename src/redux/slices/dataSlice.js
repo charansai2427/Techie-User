@@ -27,12 +27,17 @@ const dataSlice = createSlice({
       postFollowCompany : {},
       getUserFollowedComp:[],
       getSearchJob:[],
-      searchOn : false
+      searchOn : false, 
+        lastSkill : ""
+
     },
   },
   reducers: {
     searchState : (state,action) => {
       state.value.searchOn = action.payload
+    },
+    lastSkillStored : (state,action) => {
+      state.value.lastSkill = action.payload
     }
   },
 
@@ -374,5 +379,5 @@ export const getSearchJobs = createAsyncThunk("getSearchJobs", async({searchedIn
   const {data} = await axios.get(baseUrl3 + "/search/search?search="+searchedInput)
   return data
 })
-export const { searchState } = dataSlice.actions;
+export const { searchState,lastSkillStored } = dataSlice.actions;
 export default dataSlice.reducer;

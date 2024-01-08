@@ -12,7 +12,8 @@ import Ifollow from "./components/ifollow";
 import ViewCompany from "./components/viewCompany";
 import SavedJobs from "./components/savedJobs";
 import Profile from "./components/profile";
-
+import SearchSkill from "./components/searchSkill";
+import CopyToClipboard from "./components/copyBoard";
 function App() {
   const router = createBrowserRouter([
     {
@@ -49,8 +50,16 @@ function App() {
       element: <SavedJobs/>
     },
     {
+      path: "/searchSkill/:skill",
+      element:<SearchSkill/>
+    },
+    {
       path: "/profile/:userId",
       element : <Profile/>
+    },
+    {
+      path:"/copy",
+      element: <CopyToClipboard />
     }
   ]);
   return (

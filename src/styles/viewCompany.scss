@@ -163,9 +163,8 @@
 
   .card{
     width: 36em;
-    height:20em;
+    height:24.5em;
     display: flex;
-    border: 1px solid;
     position: relative;
     margin: 1em;
 
@@ -174,9 +173,7 @@
       justify-content: start;
       align-items:start;
       flex-direction: column;
-      // margin-left: 2em;
-      // padding: 1em;
-      // position: absolute;
+
        position: absolute;
        left: 2em;
        top: 1em;
@@ -190,7 +187,7 @@
      .skills{
       display: flex;
       flex-wrap: wrap;
-      
+      text-decoration: solid;
 
       
         .skills-text{

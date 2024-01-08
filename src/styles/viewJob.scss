@@ -72,7 +72,7 @@
             height: 2em;
             border: 1px solid rgb(253, 9, 9);
             border-radius: 20px;
-            background-color:rgb(244, 239, 239);
+            // background-color:rgb(244, 239, 239);
             margin-right: 0em;
             color: rgb(253, 8, 8);
         }
@@ -101,10 +101,31 @@
          }
 
          .viewjobsDetails-2{
-            margin-top: -1.8em;
+            position: absolute;
+            top: 18em;
+            left: 28em;
             label{
                 color: gray;
             }
+            .skil{
+                display: grid;
+                grid-template-columns: repeat(5,1fr);
+                width: 270px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                transition: width 0.3 ease;
+                &:hover{
+                    width: auto;
+                    cursor: pointer;
+                }     
+            }
+            // .skil{
+            //     display: -webkit-box;
+            //     -webkit-line-clamp: 5;
+            //     -webkit-box-orient: vertical;
+            //     overflow: hidden;
+            // }
          }
     }
     
@@ -113,6 +134,19 @@
         display: flex;
         flex-wrap: wrap;
         width: 100%;
+        label{
+            color: gray;
+        }
+
+    }
+
+    .loca{
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        label{
+            color: gray;
+        }
     }
 
 
@@ -120,11 +154,11 @@
            display: flex;
            justify-content:start;
            align-items: center;
-           height: 6em;
+           height: 12em;
            flex-wrap: wrap;
            position: relative;
            
- 
+
 
            .view{
             display: flex;
@@ -136,15 +170,27 @@
            }
 
            .locationcomp{
+           
             display: flex;
             flex-direction: column;
             flex-wrap: wrap;
             position: absolute;
             top: 0.5em;
-            left:6em
-           
-            
-           }
+            left:6em;
+
+            .abt{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+
+                font-size: 14.5px;
+                height: fit-content;
+                padding: 0em 13em 0em 0em;
+            }
+        }
+        
+    
 
           
     }

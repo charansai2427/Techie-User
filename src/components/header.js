@@ -75,9 +75,10 @@ function Header() {
       </div>
       <div
         className={` profile-dropdown ${open ? "display" : "display-none"}`}
-        style={{ zIndex: "1" }}
+        style={{ zIndex: "1"}}
       >
         <ul>
+        <div className="triangle"></div>
           <li onClick={() => navigate("/profile/:userId")}>My Profile</li>
           <li>
             <Link
@@ -87,7 +88,6 @@ function Header() {
               Saved Jobs
             </Link>
           </li>
-          <li>Applied Jobs</li>
           <li
             onClick={() => {
               localStorage.clear();

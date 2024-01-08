@@ -44,32 +44,35 @@ export default function Login() {
             </div>
           </div>
           <div className="login">
-            <div>
+            <div className="form-item">
               <input
-                className="inpp"
+                className="inpp p-3"
                 id="exampleEmail"
                 name="email"
-                placeholder="Email Address"
-                type="email"
+                // placeholder="Email Address"
+                type="text" autoComplete="off" required
                 onChange={(e) =>
                   setFormData001({ ...formData001, email: e.target.value })
-                }
-              ></input>
+                } 
+              />
+              <label for="password">Login</label>
             </div>
 
-            <div>
+            <div className="form-item">
               <input
-                className="inpp"
+                className="inpp p-3"
                 id="Password"
                 name="password"
-                placeholder="Login with Password"
-                type="password"
+                // placeholder="Login with Password"
+                type="password" autoComplete="off" required
                 onChange={(e) =>
                   setFormData001({ ...formData001, password: e.target.value })
                 }
               />
+              <label for="password">Password</label>
+
             </div>
-            <div className="register" onClick={handleClick2}>
+            <div className="register text-warning" onClick={handleClick2}>
               <div>Create Account ? Register</div>
             </div>
             <div className="login-btn">
