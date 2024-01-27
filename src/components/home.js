@@ -98,8 +98,11 @@ const Home = () => {
                     })}
                 </div>
             </div>
-            <span>Hirings :</span>
+            {/* <span>Hirings :</span> */}
             <div className="d-flex flex-wrap gap-2 justify-content-start container hirings">
+              <div>
+                <label className="hiring-01 bg-success text-white rounded-pill ps-2 pe-2 pb-1 pt-1">Hirings</label>
+              </div>
                 <div>
                 <label className="h6 hiring-01 rounded-pill bg-secondary text-white ps-2 pe-2 pb-1 pt-1">{job.experience}</label>
                 </div>

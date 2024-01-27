@@ -13,7 +13,6 @@ import ViewCompany from "./components/viewCompany";
 import SavedJobs from "./components/savedJobs";
 import Profile from "./components/profile";
 import SearchSkill from "./components/searchSkill";
-import CopyToClipboard from "./components/copyBoard";
 function App() {
   const router = createBrowserRouter([
     {
@@ -56,10 +55,6 @@ function App() {
     {
       path: "/profile/:userId",
       element : <Profile/>
-    },
-    {
-      path:"/copy",
-      element: <CopyToClipboard />
     }
   ]);
   return (

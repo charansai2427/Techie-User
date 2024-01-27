@@ -71,8 +71,8 @@ const Profile = () => {
               </div>
              </div>
              <div className="card-footer">
-               <Link to={"/savedJobs/" + localStorage.getItem("userId")}>
-               <div className="fw-bold" style={{cursor: "pointer",textDecoration:"none", color: "black"}} >
+               <Link to={"/savedJobs/" + localStorage.getItem("userId")} style={{textDecoration:'solid'}}>
+               <div className="fw-bold" style={{cursor: "pointer",textDecoration:"solid", color: "black"}} >
                   Saved Jobs
                 </div>
                </Link>

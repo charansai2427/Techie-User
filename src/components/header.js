@@ -12,15 +12,18 @@ function Header() {
   const userId = localStorage.getItem("userId");
   const [on, setOn] = useState(false);
   const searchJobs = useSelector((state) => state.User.value.searchJobs);
-  const [open, setOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false);
   const [search, setSearch] = useState({});
- 
+  const [isMenuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const handleClick = () => {
-    setOpen(!open);
+  // const handleClick = () => {
+  //   setOpen(!isOpen);
+  // };
+
+  const toggleMenu = () => {
+    setMenuOpen(!isMenuOpen);
   };
-  
   const searchClick = () => {
     dispatch(getSearchJobs({ searchedInput: search }));
     dispatch(searchState(true))
@@ -42,9 +45,9 @@ function Header() {
             <img
               src="https://res.cloudinary.com/cliqtick/image/upload/v1692600339/icons/logo-techie-_IE_uqk1bc.png"
               onClick={() => {
-                    dispatch(searchState(false));
-                    navigate("/home")
-            }}
+                dispatch(searchState(false));
+                navigate("/home")
+              }}
             />
           </div>
         </div>
@@ -64,21 +67,69 @@ function Header() {
             </div>
           </div>
         </div>
-        <div className="ifollow " onClick={() => navigate("/ifollow")}>
+        {/* <div className="ifollow" onClick={() => navigate("/ifollow")}>
           <p>i-Follow</p>
-        </div>
+          </div>
         <div className="profile-icon-container">
           <div onClick={handleClick} className="profile-name">
             <p>{email && email.slice(0, 2).toUpperCase()}</p>
           </div>
+        </div> 
+      
+      <div className="mprofile">
+        <label onClick={() => navigate("/profile/:userId")}>My Profile</label>
+      </div>
+      <div className="savjob">
+        <Link className="save"  to={"/savedJobs/" + userId}>Saved Jobs
+          <label onClick={()=> navigate("/savedJobs/:userId")}>Saved Jobs</label>
+          </Link>
+      </div>
+      <div className="log">
+        <label className="out" onClick={() => {
+          localStorage.clear();
+          window.location.reload();
+        }}>Logout</label>
+      </div> */}
+
+   
+        <div>
+          <img src="https://res.cloudinary.com/dpt7h5lui/image/upload/v1706353805/3388823_n8wnxd.png" onClick={() => setOpen(!isOpen)} className={`hamburger-button ${isOpen ? "open" : "close"}`} />
+          
+          <div className={`panel ${isOpen ? "open" : "close"}`}>
+          
+            <ul>
+
+              <li>
+                <label    onClick={() => {
+                dispatch(searchState(false));
+                navigate("/home")
+              }}>Home</label>
+              </li>
+              <li>
+                <label onClick={() => navigate("/ifollow")}>I-Follow</label>
+              </li>
+              <li>
+                <label onClick={() => navigate("/profile/:userId")}>My Profile</label>
+              </li>
+              <li>
+                <Link className="save" to={"/savedJobs/" + userId} style={{color:'white',textDecoration:'solid'}}><label>Saved Jobs
+                </label> 
+                </Link>     
+                    </li>
+              <li>
+                <label className="out" onClick={() => {
+                  localStorage.clear();
+                  window.location.reload();
+                }}>Logout</label>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-      <div
+      {/* <div
         className={` profile-dropdown ${open ? "display" : "display-none"}`}
-        style={{ zIndex: "1"}}
       >
         <ul>
-        <div className="triangle"></div>
           <li onClick={() => navigate("/profile/:userId")}>My Profile</li>
           <li>
             <Link
@@ -97,9 +148,9 @@ function Header() {
             Log Out
           </li>
         </ul>
-      </div>
-     
-      
+      </div> */}
+
+
     </div>
   );
 }

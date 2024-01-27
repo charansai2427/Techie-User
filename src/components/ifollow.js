@@ -4,6 +4,7 @@ import { FaArrowRightLong } from "react-icons/fa6";
 import { verifyToken } from "../utils/utlis";
 import { Link, useNavigate } from "react-router-dom";
 import "../styles/ifollow.scss";
+import"../styles/home.scss";
 import Header from "./header";
 import Footer from "./footer";
 import Navigationpanel from "./navigationpanel";
@@ -71,9 +72,6 @@ function Ifollow() {
       <Header />
       <div className="ifollow-inner container">
         <div className="ifollow-text">i-Follow</div>
-        {/* <div className="ifolowinp">
-          <input className="inp container" type="text" />
-        </div> */}
 
         <div className="followed">
           <h2>Companies Followed</h2>

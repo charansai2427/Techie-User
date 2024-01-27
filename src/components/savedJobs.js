@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Header from "./header";
 import "../styles/savedJobs.scss";
-
+import "../styles/home.scss"
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserSaveJobs } from "../redux/slices/dataSlice";
@@ -90,8 +90,11 @@ function SavedJobs() {
                           </div>
                         </div>
 
-                        <label className="h6">Hirings :</label>
+                        {/* <label className="h6">Hirings :</label> */}
                         <div className="d-flex gap-1 ">
+                          <div>
+                            <span className="bg-secondary text-white rounded-pill ps-2 pe-2 ">Hirings</span>
+                          </div>
                           <div>
                             <span
                               style={{

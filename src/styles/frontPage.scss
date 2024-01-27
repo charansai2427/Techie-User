@@ -182,7 +182,7 @@
 
         .icons {
             position: absolute;
-            top: 42em;
+            top: 39em;
             right: 2em;
             font-size: 2em;
             display: flex;
@@ -194,25 +194,27 @@
         }
     }
 
-    .links {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    // .links {
+    //     display: flex;
+    //     justify-content: space-between;
+    //     align-items: center;
 
-        .play {
-            width: 10em;
-            height: 8%;
-            position: fixed;
-            right: 0em;
-            top: 32em;
-        }
+    //     .play {
+    //         width: 10em;
+    //         height: 8%;
+    //         position: fixed;
+    //         right: 0em;
+    //         top: 32em;
+    //         background-image: url('../media/pngwing.com.png');
+    //     }
 
-        .lion {
-            width: 10em;
-            height: 10%;
-            position: fixed;
-            left: 0em;
-            top: 31.3em;
-        }
-    }
+    //     .lion {
+    //         width: 10em;
+    //         height: 10%;
+    //         position: fixed;
+    //         left: 0em;
+    //         top: 31.3em;
+    //         background-image: url('../media/b1917f1213fadc6464ecd28f49eb0553-removebg-preview.png');
+    //     }
+    // }
 }

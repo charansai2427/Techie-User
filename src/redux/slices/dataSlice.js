@@ -16,6 +16,7 @@ const dataSlice = createSlice({
       deleteJob: [],
       deleteUser: [],
       deleteCompany: [],
+      deleteSavedJob : {},
       userDetails: {},
       update: {},
       upload: {},
@@ -28,7 +29,8 @@ const dataSlice = createSlice({
       getUserFollowedComp:[],
       getSearchJob:[],
       searchOn : false, 
-        lastSkill : ""
+        lastSkill : "",
+      savedJobColor : ""
 
     },
   },
@@ -38,6 +40,9 @@ const dataSlice = createSlice({
     },
     lastSkillStored : (state,action) => {
       state.value.lastSkill = action.payload
+    },
+    savedJobColorfunc: (state, action) => {
+      state.value.savedJobColor = action.payload
     }
   },
 
@@ -195,6 +200,13 @@ const dataSlice = createSlice({
     builder.addCase(getSearchJobs.rejected, (state,action) =>{
       state.error= action.error;
     });
+    
+    builder.addCase(delUserSavedJob.fulfilled, (state,action) =>{
+      state.value.deleteSavedJob= action.payload;
+    });
+    builder.addCase(delUserSavedJob.rejected, (state,action) =>{
+      state.error= action.error;
+    });
 
   },
 });
@@ -305,7 +317,7 @@ export const getAllCompanies = createAsyncThunk("getAllCompanies", async() => {
   return data
 })
 
-export const getJob = createAsyncThunk("getCompany", async({jobId}) => {
+export const getJob = createAsyncThunk("getJobDetails", async({jobId}) => {
   const {data} = await axios.get(baseUrl + "/jobs/get/" + jobId)
   return data
 })
@@ -351,6 +363,18 @@ export const getUserSaveJobs = createAsyncThunk("getUserSavedJobs",async({userId
   return data;
 })
 
+export const delUserSavedJob = createAsyncThunk("delUserSavedJob",async({jobId}) => {
+  
+  const {token,userId} = localStorage;
+  const {data} = await axios.delete(baseUrl + `/jobs/savedJobs/delone/${jobId}/${userId}`,
+  {
+    headers : {
+      Authorization : "Bearer " + token
+    }
+  });
+  return data;
+})
+
 export const followCompany = createAsyncThunk("followCompany", async({cid}) => {
   const userId = localStorage.getItem("userId")
    const token = localStorage.getItem("token");
@@ -379,5 +403,5 @@ export const getSearchJobs = createAsyncThunk("getSearchJobs", async({searchedIn
   const {data} = await axios.get(baseUrl3 + "/search/search?search="+searchedInput)
   return data
 })
-export const { searchState,lastSkillStored } = dataSlice.actions;
+export const { searchState,lastSkillStored ,savedJobColorfunc} = dataSlice.actions;
 export default dataSlice.reducer;

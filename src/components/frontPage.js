@@ -18,7 +18,7 @@ const Front = () => {
 
     const onHandleClick1 = (e) => {
         e.preventDefault();
-        navigate("/admin/dashboard")
+        navigate("/login")
     }
 
     return (
@@ -78,10 +78,10 @@ const Front = () => {
                     </div>
                 </div>
             </div>
-            <div className="links">
-                <img className="lion" src="https://codezo.s3.amazonaws.com/static/img/mii.png" />
-                <img className="play" src="https://codezo.s3.amazonaws.com/static/img/google-play-download.png" />
-            </div>
+            {/* <div className="links">
+                <img className="lion" src="" />
+                <img className="play" src="" />
+            </div> */}
         </div>
     )
 }

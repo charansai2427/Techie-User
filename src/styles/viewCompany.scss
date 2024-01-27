@@ -118,22 +118,26 @@
   }
   .profile-dropdown{
     position: absolute;
-    top: 13%;
-    right: 1%;
+    top: 10%;
+    right: 5%;
+    z-index: 1;
   
     ul{
       list-style: none;
       line-height: 2rem;
-      background-color: rgb(239, 195, 123);
+      background-color: white;
       padding: 0.4rem;
-      border-radius: 2%;
+      border-radius: 10px;
+      box-shadow: 0 0.1rem 0.3rem;
+
       li{
         font-size: 1rem;
         padding: 0.2rem;
         font-family: 500;
         cursor: pointer;
         &:hover{
-          background-color: rgb(240, 217, 178);
+          background-color: skyblue;
+          border-radius:10px;        
         }
       }
     }
